@@ -83,7 +83,9 @@ int main() {
 
 ```
 
-# Код которым тестил на Python
+# Тест на большом объеме различных данных
+
+Тест на обнаружение нестабильности при большом объеме вводных - пройден
 
 ``` python
 from random import*
@@ -97,7 +99,37 @@ for i in range(0, n):
     a.append(b)
 a = sorted(a)
 for i in range(0, len(a)-1):
-    maxx = max(maxx,abs(a[i+1] - a[i]))
+    maxx = max(maxx,abs(a[i+1] - a[i])) # Проверка медленным но рабочим способом
 print()
 print(maxx)
+```
+# Тест на большом объеме близких данных - прошел
+
+Тест на обнаружение зацикливания/проблем при работе с большими объемами схожих данных - пройден
+
+Суть проверки: 10^<sup>5</sup> данных в диапазоне (10^<sup>9</sup> - 10; 10^<sup>9</sup>)
+
+``` python
+from random import*
+n = 10**5
+print(n)
+a=[]
+maxx=0
+for i in range(0, n):
+    b = randint(999999990,999999999)
+    print(b,end=" ")
+    a.append(b)
+a = sorted(a)
+for i in range(0, len(a)-1):
+    maxx = max(maxx,abs(a[i+1] - a[i])) # Проверка медленным но рабочим способом
+print()
+print(maxx) 
+```
+
+# Тест на < 2 элементах
+
+Тест на крайний случай условия - пройден
+
+``` python 
+
 ```
