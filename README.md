@@ -1,5 +1,5 @@
 # Radix sort O(kn)
-''' C++
+``` C++
 #include <iostream>
 
 
@@ -88,4 +88,4 @@ int main() {
 
     return 0;
 }
-'''
+```
